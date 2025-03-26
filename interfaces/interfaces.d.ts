@@ -2,10 +2,10 @@ interface Person {
   name: string;
   height: string;
   mass: string;
-  hairColor: string;
-  skinColor: string;
-  eyeColor: string;
-  birthYear: string;
+  hair_color: string;
+  skin_color: string;
+  eye_color: string;
+  birth_year: string;
   gender: string;
   homeworld: string;
   films: string[];
@@ -19,11 +19,11 @@ interface Person {
 
 interface Film {
   title: string;
-  episodeId: number;
-  openingCrawl: string;
+  episode_id: number;
+  opening_crawl: string;
   director: string;
   producer: string;
-  releaseDate: string;
+  release_date: string;
   characters: string[];
   planets: string[];
   starships: string[];
@@ -36,13 +36,13 @@ interface Film {
 
 interface Planet {
   name: string;
-  rotationPeriod: string;
-  orbitalPeriod: string;
+  rotation_period: string;
+  orbital_period: string;
   diameter: string;
   climate: string;
   gravity: string;
   terrain: string;
-  surfaceWater: string;
+  surface_water: string;
   population: string;
   residents: string[];
   films: string[];
