@@ -1,52 +1,52 @@
 interface Person {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  birth_year: string;
-  gender: string;
-  homeworld: string;
-  films: string[];
-  species: string[];
-  vehicles: string[];
-  starships: string[];
-  created: string;
-  edited: string;
+  nombre: string;
+  altura: string;
+  peso: string;
+  color_de_cabello: string;
+  color_de_piel: string;
+  color_de_ojos: string;
+  año_de_nacimiento: string;
+  genero: string;
+  planeta_natal: string;
+  películas: string[];
+  especies: string[];
+  vehiculos: string[];
+  naves_estelares: string[];
+  creado: string;
+  editado: string;
   url: string;
 }
 
 interface Film {
-  title: string;
-  episode_id: number;
-  opening_crawl: string;
+  titulo: string;
+  episodio_id: number;
+  sinopsis: string;
   director: string;
-  producer: string;
-  release_date: string;
-  characters: string[];
-  planets: string[];
-  starships: string[];
-  vehicles: string[];
-  species: string[];
-  created: string;
-  edited: string;
+  productor: string;
+  fecha_de_lanzamiento: string;
+  personajes: string[];
+  planetas: string[];
+  naves_estelares: string[];
+  vehiculos: string[];
+  especies: string[];
+  creado: string;
+  editado: string;
   url: string;
 }
 
 interface Planet {
-  name: string;
-  rotation_period: string;
-  orbital_period: string;
-  diameter: string;
-  climate: string;
-  gravity: string;
-  terrain: string;
-  surface_water: string;
-  population: string;
-  residents: string[];
-  films: string[];
-  created: string;
-  edited: string;
+  nombre: string;
+  periodo_de_rotacion: string;
+  periodo_orbital: string;
+  diametro: string;
+  clima: string;
+  gravedad: string;
+  terreno: string;
+  superficie_agua: string;
+  poblacion: string;
+  residentes: string[];
+  peliculas: string[];
+  creado: string;
+  editado: string;
   url: string;
 }
