@@ -9,7 +9,7 @@ import ErrorMessage from "@/components/atoms/ErrorMessage";
 import LoadingMessage from "@/components/atoms/LoadingMessage";
 
 export default function HomeScreen() {
-  const { data, error, isPending } = useFilms();
+  const { films, error, isPending } = useFilms();
 
   if (isPending) return <LoadingMessage message="Cargando peliculas..." />;
 
@@ -27,7 +27,7 @@ export default function HomeScreen() {
       </ThemedView>
 
       <View style={styles.filmsList}>
-        {data?.results.map((film: Film) => (
+        {films.map((film: Film) => (
           <FilmCard key={film.url} film={film} />
         ))}
       </View>

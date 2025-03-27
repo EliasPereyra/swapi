@@ -16,18 +16,18 @@ export default function PlanetCard({ planet, key }: PlanetCardProps) {
           source={icons.planet}
           style={{ width: 20, height: 20, tintColor: "#70660c" }}
         />
-        <Text style={styles.title}>{planet.name}</Text>
+        <Text style={styles.title}>{planet.nombre}</Text>
       </View>
 
       <View style={styles.detailsContainer}>
         <Text style={styles.label}>Detalles</Text>
         <View style={styles.detailsList}>
-          <Text>Clima: {planet.climate}</Text>
-          <Text>Terreno: {planet.terrain}</Text>
-          <Text>Población: {planet.population}</Text>
-          <Text>Agua de superficie: {planet.surface_water}</Text>
-          <Text>Diámetro: {planet.diameter}</Text>
-          <Text>Período Orbital: {planet.orbital_period}</Text>
+          <Text>Clima: {planet.clima}</Text>
+          <Text>Terreno: {planet.terreno}</Text>
+          <Text>Población: {planet.poblacion}</Text>
+          <Text>Agua de superficie: {planet.superficie_agua}</Text>
+          <Text>Diámetro: {planet.diametro}</Text>
+          <Text>Período Orbital: {planet.periodo_orbital}</Text>
         </View>
       </View>
     </View>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+
 import ParallaxScrollView from "@/components/templates/ParallaxScrollView";
 import PersonCard from "@/components/molecules/PersonCard";
 import Search from "@/components/atoms/Search";
@@ -9,21 +10,21 @@ import ErrorMessage from "@/components/atoms/ErrorMessage";
 import { Colors } from "@/constants/Colors";
 
 export default function People() {
-  const { isPending, error, data } = usePeople();
-  const [name, setName] = useState("");
-  const [filteredPeople, setFilteredPeople] = useState<Person[]>(data.results);
+  const { isPending, error, people } = usePeople();
+  const [nombre, setNombre] = useState("");
+  const [filteredPeople, setFilteredPeople] = useState<Person[]>(people);
 
   useEffect(() => {
-    if (name) {
+    if (nombre) {
       setTimeout(() => {
         setFilteredPeople(
-          data?.results.filter((person: Person) =>
-            person.name.toLowerCase().includes(name.toLowerCase())
+          people.filter((person: Person) =>
+            person.nombre.toLowerCase().includes(nombre.toLowerCase())
           )
         );
       }, 400);
     }
-  }, [name]);
+  }, [nombre]);
 
   if (isPending) return <LoadingMessage message="Cargando personajes..." />;
 
@@ -35,12 +36,12 @@ export default function People() {
     >
       <Text style={styles.title}>Personajes</Text>
       <Text style={styles.description}>Personajes del Star Wars universe</Text>
-      <Search value={name} onChange={setName} />
+      <Search value={nombre} onChange={setNombre} />
 
       <View style={styles.peopleList}>
         {filteredPeople?.length > 0 ? (
           filteredPeople.map((person: Person) => (
-            <PersonCard key={person.name} person={person} />
+            <PersonCard key={person.nombre} person={person} />
           ))
         ) : (
           <View style={styles.noResults}>

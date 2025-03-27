@@ -8,7 +8,7 @@ import LoadingMessage from "@/components/atoms/LoadingMessage";
 import ErrorMessage from "@/components/atoms/ErrorMessage";
 
 export default function Planets() {
-  const { isPending, error, data } = usePlanets();
+  const { isPending, error, planets } = usePlanets();
 
   if (isPending) return <LoadingMessage message="Cargando planetas..." />;
 
@@ -22,8 +22,8 @@ export default function Planets() {
         <Text style={styles.title}>Planetas</Text>
         <Text style={styles.description}>Planetas del Star Wars universe</Text>
         <View style={styles.planetsList}>
-          {data?.results.map((planet: Planet) => (
-            <PlanetCard key={planet.name} planet={planet} />
+          {planets.map((planet: Planet) => (
+            <PlanetCard key={planet.nombre} planet={planet} />
           ))}
         </View>
       </View>

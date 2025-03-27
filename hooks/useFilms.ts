@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { BASE_URL } from "@/constants/api";
+import { filmTranslations, translateArray } from "@/utils/translateApiResponse";
 
 export const useFilms = () => {
   const { isPending, error, data } = useQuery({
@@ -7,5 +8,8 @@ export const useFilms = () => {
     queryFn: () => fetch(`${BASE_URL}/films/`).then((res) => res.json()),
   });
 
-  return { isPending, error, data };
+  let films: Film[] = data?.results;
+  films = translateArray(data?.results, filmTranslations);
+
+  return { isPending, error, films };
 };

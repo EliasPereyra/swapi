@@ -11,7 +11,7 @@ interface CardProps {
 }
 
 export default function FilmCard({ film, key }: CardProps) {
-  const characterNames = film.characters.map((character) => {
+  const characterNames = film.personajes?.map((character) => {
     const characterId = getPeopleEndpointResourceNumber(character);
     const { personDetails } = usePersonDetails(characterId);
 
@@ -24,15 +24,15 @@ export default function FilmCard({ film, key }: CardProps) {
   return (
     <View key={key} style={styles.cardBg}>
       <View style={styles.header}>
-        <Text style={styles.title}>{film.title}</Text>
-        <Text style={styles.episode}>Episodio {film.episode_id}</Text>
+        <Text style={styles.title}>{film.titulo}</Text>
+        <Text style={styles.episode}>Episodio {film.episodio_id}</Text>
         <View style={styles.info}>
           <Text style={styles.label}>Fecha de lanzamiento</Text>
-          <Text style={styles.description}>{film.release_date}</Text>
+          <Text style={styles.description}>{film.fecha_de_lanzamiento}</Text>
         </View>
         <View>
           <Text style={styles.label}>Sinopsis</Text>
-          <Text style={styles.filmDescription}>{film.opening_crawl}</Text>
+          <Text style={styles.filmDescription}>{film.sinopsis}</Text>
         </View>
       </View>
       <View style={styles.separator} />
@@ -41,7 +41,7 @@ export default function FilmCard({ film, key }: CardProps) {
           <Text style={styles.label}>Director</Text>
           <Text style={styles.description}>{film.director}</Text>
           <Text style={styles.label}>Productor</Text>
-          <Text style={styles.description}>{film.producer}</Text>
+          <Text style={styles.description}>{film.productor}</Text>
         </View>
         <Text style={styles.label}>Personajes:</Text>
         {/* <View style={styles.charactersList}>
@@ -56,10 +56,10 @@ export default function FilmCard({ film, key }: CardProps) {
       <View style={styles.details}>
         <Text style={styles.label}>Detalles de la película</Text>
         <View style={styles.detailsList}>
-          <Icon quantity={film.planets.length} iconName="planet" />
-          <Icon quantity={film.vehicles.length} iconName="vehicle" />
-          <Icon quantity={film.starships.length} iconName="starship" />
-          <Icon quantity={film.species.length} iconName="species" />
+          <Icon quantity={film.planetas.length} iconName="planet" />
+          <Icon quantity={film.vehiculos.length} iconName="vehicle" />
+          <Icon quantity={film.naves_estelares.length} iconName="starship" />
+          <Icon quantity={film.especies.length} iconName="species" />
         </View>
       </View>
       <TouchableOpacity style={styles.visitBtn}>

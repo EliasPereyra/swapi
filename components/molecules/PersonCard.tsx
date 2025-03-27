@@ -14,11 +14,11 @@ export default function PersonCard({ person, key }: PersonCardProps) {
     <Link href={`/person/${personId}`} asChild>
       <TouchableOpacity>
         <View key={key} style={styles.personContainer}>
-          <Text style={styles.title}>{person.name}</Text>
+          <Text style={styles.title}>{person.nombre}</Text>
 
           <View>
-            <Text>Gender: {person.gender}</Text>
-            <Text>Height: {person.height}</Text>
+            <Text>Gender: {person.genero}</Text>
+            <Text>Height: {person.altura}</Text>
           </View>
         </View>
       </TouchableOpacity>
