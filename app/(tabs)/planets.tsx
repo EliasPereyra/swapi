@@ -1,19 +1,22 @@
-import ParallaxScrollView from "@/components/templates/ParallaxScrollView";
-import { ThemedText } from "@/components/atoms/ThemedText";
-import { usePlanets } from "@/hooks/usePlanets";
 import { StyleSheet, Text, View } from "react-native";
+
+import ParallaxScrollView from "@/components/templates/ParallaxScrollView";
+import { usePlanets } from "@/hooks/usePlanets";
 import PlanetCard from "@/components/molecules/PlanetCard";
+import { Colors } from "@/constants/Colors";
+import LoadingMessage from "@/components/atoms/LoadingMessage";
+import ErrorMessage from "@/components/atoms/ErrorMessage";
 
 export default function Planets() {
   const { isPending, error, data } = usePlanets();
 
-  if (isPending) return <ThemedText>Loading planets...</ThemedText>;
+  if (isPending) return <LoadingMessage message="Cargando planetas..." />;
 
-  if (error) return <ThemedText>{error.message}</ThemedText>;
+  if (error) return <ErrorMessage message={error.message} />;
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
+      headerBackgroundColor={{ light: "#A1CEDC", dark: "#474108" }}
     >
       <View style={styles.planetsContainer}>
         <Text style={styles.title}>Planetas</Text>
@@ -33,12 +36,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     marginBottom: 16,
-    color: "#FFF",
+    color: Colors.dark.primary,
     textAlign: "center",
   },
   description: {
     fontSize: 16,
-    color: "#FFF",
+    color: "#ddd",
     textAlign: "center",
   },
   planetsList: {
@@ -46,6 +49,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: 16,
+    gap: 8,
   },
 });
