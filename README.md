@@ -1,50 +1,24 @@
-# Welcome to your Expo app 👋
+# Swapi
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Esta aplicación móvil es una demostración básica del uso de la [API de Star Wars](https://swapi.dev/) en Expo. Se muestran los personajes de Star Wars y se puede navegar entre ellos, así como ver detalles de cada uno de ellos.
 
-## Get started
+Se aplicó el patrón de diseño **Atomic Design** para una estructura de componentes sencilla y escalable.
 
-1. Install dependencies
+## Herramientas
 
-   ```bash
-   npm install
-   ```
+- ![Expo][Expo]
+- ![ReactNative][ReactNative]
+- ![TypeScript][TypeScript]
+- ![ReactQuery][ReactQuery]
 
-2. Start the app
+[Expo]: https://img.shields.io/badge/Expo-1C2024?style=for-the-badge&logo=expo&logoColor=white
+[ReactNative]: https://img.shields.io/badge/ReactNative-61DAFB?style=for-the-badge&logo=react&logoColor=white
+[TypeScript]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[ReactQuery]: https://img.shields.io/badge/ReactQuery-FF4154?style=for-the-badge&logo=reactquery&logoColor=white
 
-   ```bash
-    npx expo start
-   ```
+## Instalación
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Clona este repositorio con `git clone https://github.com/ramirezpablo/swapi.git`
+- Instala las dependencias con `npm install`
+- Corre la app con `npm start`
+- Abre la app con **Expo Go**, que lo puedes descargar desde la tienda en tu dispositivo.
