@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function LoadingMessage({ message }: { message: string }) {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
       <ActivityIndicator />
       <Text style={styles.title}>{message}</Text>
     </SafeAreaView>
@@ -13,7 +13,7 @@ export default function LoadingMessage({ message }: { message: string }) {
 const styles = StyleSheet.create({
   title: {
     fontSize: 32,
-    marginBottom: 16,
+    marginBlock: 16,
     color: "#FFF",
     textAlign: "center",
   },
