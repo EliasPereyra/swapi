@@ -1,21 +1,23 @@
 import { StyleSheet, Text, View } from "react-native";
 
 import ParallaxScrollView from "@/components/templates/ParallaxScrollView";
-import { ThemedText } from "@/components/atoms/ThemedText";
 import { ThemedView } from "@/components/atoms/ThemedView";
 import { useFilms } from "@/hooks/useFilms";
 import FilmCard from "@/components/molecules/FilmCard";
+import { Colors } from "@/constants/Colors";
+import ErrorMessage from "@/components/atoms/ErrorMessage";
+import LoadingMessage from "@/components/atoms/LoadingMessage";
 
 export default function HomeScreen() {
   const { data, error, isPending } = useFilms();
 
-  if (isPending) return <ThemedText>Loading films...</ThemedText>;
+  if (isPending) return <LoadingMessage message="Cargando peliculas..." />;
 
-  if (error) return <ThemedText>{error.message}</ThemedText>;
+  if (error) return <ErrorMessage message={error.message} />;
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#191700" }}
+      headerBackgroundColor={{ light: "#A1CEDC", dark: "#474108" }}
     >
       <ThemedView style={styles.titleContainer}>
         <Text style={styles.title}>Películas</Text>
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     marginBottom: 16,
-    color: "#FFF",
+    color: Colors.dark.primary,
     textAlign: "center",
   },
   titleContainer: {
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
-    color: "#FFF",
+    color: "#ddd",
     textAlign: "center",
   },
   filmsList: {
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     flexWrap: "wrap",
-    gap: 16,
+    gap: 12,
     marginBottom: 8,
   },
 });
