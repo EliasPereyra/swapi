@@ -1,11 +1,18 @@
+import { StyleSheet, Text, View } from "react-native";
+import { useLocalSearchParams } from "expo-router";
+
+import ErrorMessage from "@/components/atoms/ErrorMessage";
+import LoadingMessage from "@/components/atoms/LoadingMessage";
 import ParallaxScrollView from "@/components/templates/ParallaxScrollView";
 import { usePersonDetails } from "@/hooks/usePersonDetails";
-import { useLocalSearchParams } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
 
 export default function Person() {
   const { id } = useLocalSearchParams();
   const { isPending, error, personDetails } = usePersonDetails(id);
+
+  if (isPending) return <LoadingMessage message="Cargando personaje..." />;
+
+  if (error) return <ErrorMessage message={error.message} />;
 
   return (
     <ParallaxScrollView
@@ -46,14 +53,14 @@ export default function Person() {
 const styles = StyleSheet.create({
   container: {},
   title: {
-    fontSize: 28,
+    fontSize: 40,
     fontWeight: "bold",
     color: "#FFF",
     marginBottom: 30,
   },
   label: {
     fontSize: 20,
-    color: "#ddd",
+    color: "#a09212",
   },
   description: {
     fontSize: 16,
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
   details: {
     marginTop: 16,
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     gap: 8,
     flexWrap: "wrap",
   },
