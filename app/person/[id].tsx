@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 
 import ErrorMessage from "@/components/atoms/ErrorMessage";
 import LoadingMessage from "@/components/atoms/LoadingMessage";
 import ParallaxScrollView from "@/components/templates/ParallaxScrollView";
 import { usePersonDetails } from "@/hooks/usePersonDetails";
+import { IconSymbol } from "@/components/atoms/IconSymbol";
+import { Colors } from "@/constants/Colors";
 
 export default function Person() {
   const { id } = useLocalSearchParams();
@@ -19,6 +21,14 @@ export default function Person() {
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
     >
       <View>
+        <TouchableOpacity onPress={() => history.back()}>
+          <IconSymbol
+            name="chevron.left"
+            size={40}
+            color={Colors.dark.text}
+            style={{ margin: "auto" }}
+          />
+        </TouchableOpacity>
         <Text style={styles.title}>{personDetails?.name}</Text>
         <Text style={styles.label}>Todos los detalles sobre el personaje</Text>
         <View style={styles.details}>
