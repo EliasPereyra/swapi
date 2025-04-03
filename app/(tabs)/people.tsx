@@ -23,6 +23,8 @@ export default function People() {
           )
         );
       }, 400);
+    } else {
+      setFilteredPeople(people);
     }
   }, [nombre]);
 
